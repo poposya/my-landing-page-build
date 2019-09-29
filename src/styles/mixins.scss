@@ -1,0 +1,45 @@
+@import "variables";
+
+@mixin regular_text {
+  font-family: $font-regular;
+  font-size: $regular-font-size;
+  line-height: $regular-line-height;
+  color: $white;
+  opacity: .7;
+}
+
+@mixin link {
+  font-family: $font-extraBold;
+  font-size: 12px;
+  line-height: 12px;
+  letter-spacing: 2px;
+  color: $white;
+}
+
+@mixin h1 {
+  font-family: $font-extraBold;
+  font-size: 46px;
+  line-height: 51px;
+  color: $white;
+}
+
+@mixin h2 {
+  font-family: $font-extraBold;
+  font-size: 34px;
+  line-height: 40px;
+  color: $white
+}
+
+@mixin h3 {
+  font-family: $font-extraBold;
+  font-size: 30px;
+  line-height: 24px;
+  color: $white;
+}
+
+@mixin h4 {
+  font-family: $font-bold;
+  font-size: 18px;
+  line-height: 22px;
+  color: $yellow;
+}

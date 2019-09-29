@@ -1,0 +1,29 @@
+@import "src/assets/fonts/fonts.scss";
+
+/* Variables */
+
+/* Fonts */
+$font-regular: 'Circe-Regular', sans-serif;
+$font-extraBold: 'Circe-ExtraBold', sans-serif;
+$font-bold: 'Circe-Bold', sans-serif;
+
+$regular-font-size: 16px;
+$regular-line-height: 24px;
+
+/* Colors */
+$white: #fff;
+$black: #333333;
+$gold: #EFAB87;
+$green: #00968F;
+$grey: #939393;
+$yellow: #F1C382;
+
+body, html {
+  font-family: $font-regular;
+  font-size: $regular-font-size;
+  line-height: $regular-line-height;
+  color: $white;
+  margin: 0;
+  padding: 0;
+  background-color: $black;
+}
