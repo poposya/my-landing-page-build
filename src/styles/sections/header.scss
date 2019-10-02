@@ -1,5 +1,41 @@
-header {
-  .logo {
-    @include h1();
+@import "../variables";
+@import "../mixins";
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  &_lang-switcher {
+    display: flex;
+    align-items: center;
+    .lang {
+      @include link();
+      text-transform: uppercase;
+      color: $yellow;
+      opacity: .5;
+      &:hover {
+        cursor: pointer;
+        opacity: .7;
+      }
+      &:first-child {
+        margin-right: 20px;
+      }
+      &.active {
+        opacity: 1;
+      }
+    }
+  }
+  &_logo {
+    background: url("/static/logo.svg");
+    width: 74px;
+    height: 30px;
+  }
+  &_contacts {
+    a {
+      @include link();
+      text-transform: uppercase;
+      text-decoration: none;
+      color: $yellow;
+    }
   }
 }
