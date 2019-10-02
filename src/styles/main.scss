@@ -7,15 +7,10 @@
 
 
 body, html {
-  font-family: $font-regular;
-  font-size: $regular-font-size;
-  line-height: $regular-line-height;
-  color: $white;
+  font-family: $content-font;
+  font-size: $content-font-size;
+  line-height: $content-line-height;
+  color: $black;
   padding: 0;
-  background: $green url("/static/noise.svg");
   margin: 0
-}
-
-.wrapper {
-  margin: 30px 55px;
 }

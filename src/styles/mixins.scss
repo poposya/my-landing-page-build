@@ -1,45 +1,128 @@
 @import "variables";
 
-@mixin regular_text {
-  font-family: $font-regular;
-  font-size: $regular-font-size;
-  line-height: $regular-line-height;
-  color: $white;
-  opacity: .7;
+@mixin content_text {
+  font-family: $content-font;
+  font-size: $content-font-size;
+  line-height: $content-line-height;
+  color: $black;
 }
 
 @mixin link {
-  font-family: $font-extraBold;
-  font-size: 12px;
-  line-height: 12px;
-  letter-spacing: 2px;
-  color: $white;
+  font-family: $bold-font;
+  font-size: 10px;
+  line-height: 10px;
+  letter-spacing: 0.2em;
+  color: $primary;
 }
 
 @mixin h1 {
-  font-family: $font-extraBold;
-  font-size: 46px;
-  line-height: 51px;
-  color: $white;
+  font-family: $semiBold-font;
+  font-size: 48px;
+  line-height: 53px;
+  color: $black;
+}
+
+@mixin h1_mobile {
+  font-family: $semiBold-font;
+  font-size: 32px;
+  line-height: 38px;
+  color: $black;
 }
 
 @mixin h2 {
-  font-family: $font-extraBold;
+  font-family: $semiBold-font;
   font-size: 34px;
-  line-height: 40px;
-  color: $white
+  line-height: 39px;
+  color: $black;
+}
+
+@mixin h2_mobile {
+  font-family: $semiBold-font;
+  font-size: 28px;
+  line-height: 30px;
+  color: $black;
 }
 
 @mixin h3 {
-  font-family: $font-extraBold;
-  font-size: 30px;
-  line-height: 24px;
+  font-family: $semiBold-font;
+  font-size: 18px;
+  line-height: 23px;
+  color: $white;
+}
+
+@mixin h3_mobile{
+  font-family: $semiBold-font;
+  font-size: 16px;
+  line-height: 23px;
   color: $white;
 }
 
 @mixin h4 {
-  font-family: $font-bold;
+  font-family: $semiBold-font;
+  font-size: 16px;
+  line-height: 24px;
+  color: $black;
+}
+
+@mixin h4_mobile {
+  font-family: $semiBold-font;
+  font-size: 14px;
+  line-height: 20px;
+  color: $black;
+}
+
+@mixin forms {
+  font-family: $regular-font;
+  font-size: 12px;
+  color: $white;
+  line-height: 15px;
+  opacity: .4;
+}
+
+@mixin over_h {
+  font-family: $bold-font;
+  font-size: 10px;
+  line-height: 17px;
+  letter-spacing: 0.5em;
+  text-transform: uppercase;
+  color: $primary;
+}
+
+@mixin s1 {
+  font-family: $semiBold-font;
+  font-size: 64px;
+  line-height: 53px;
+  color: $primary
+}
+
+@mixin quote {
+  font-family: $content-medium;
+  font-size: 16px;
+  line-height: 24px;
+  color: $primary;
+}
+
+@mixin quote_mobile {
+  font-family: $content-medium;
+  font-size: 14px;
+  line-height: 20px;
+  color: $primary;
+}
+
+@mixin menu {
+  font-family: $semiBold-font;
   font-size: 18px;
-  line-height: 22px;
-  color: $yellow;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  line-height: 30px;
+  color: $primary;
+}
+
+@mixin menu_mobile {
+  font-family: $bold-font;
+  font-size: 12px;
+  line-height: 15px;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: $primary;
 }
