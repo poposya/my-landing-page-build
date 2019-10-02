@@ -4,3 +4,18 @@
 // Sections
 
 @import "sections/header";
+
+
+body, html {
+  font-family: $font-regular;
+  font-size: $regular-font-size;
+  line-height: $regular-line-height;
+  color: $white;
+  padding: 0;
+  background: $green url("/static/noise.svg");
+  margin: 0
+}
+
+.wrapper {
+  margin: 30px 55px;
+}

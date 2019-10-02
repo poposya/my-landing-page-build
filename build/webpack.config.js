@@ -53,7 +53,8 @@ module.exports = {
                 ]
             },
             {
-                test: /\.(jpg|png|gif)$/,
+                test: /\.(jpg|png|gif|svg)$/,
+                include: '/src/assets/images',
                 use: [
                     {
                         loader: "file-loader",
@@ -88,7 +89,7 @@ module.exports = {
                 ]
             },
             {
-                test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
+                test: /\.(woff(2)?|ttf|eot)(\?v=\d+\.\d+\.\d+)?$/,
                 use: [
                     {
                         loader: 'file-loader',
@@ -122,6 +123,11 @@ module.exports = {
                 removeComments: true,
                 removeEmptyElements: true
             },
-        })
+        }),
+        new webpack.ProvidePlugin({
+            $: 'jquery',
+            jQuery: 'jquery',
+            'window.jQuery': 'jquery'
+        }),
     ]
 };
