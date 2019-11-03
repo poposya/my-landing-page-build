@@ -1,0 +1,93 @@
+@import "variables";
+@import "mixins";
+
+.btn_default {
+  @include link();
+  border: 1px solid;
+  border-right: 0;
+  position: relative;
+  padding: 15px 40px;
+  outline: none;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-weight: bold;
+  height: 43px;
+  background-color: transparent;
+  min-width: 170px;
+  transition: all 0.2s linear;
+  &:hover {
+    cursor: pointer;
+  }
+
+  &-solid {
+    &-bordo {
+      background-color: $primary;
+      color: $white;
+      &:after {
+        position: absolute;
+        content: '';
+        width: 15px;
+        left: 100%;
+        top: 50%;
+        height: 1px;
+        background-color: $primary;
+        transition: width 0.2s linear;
+      }
+      &:before {
+        position: absolute;
+        content: '';
+        width: 15px;
+        right: 0;
+        top: 50%;
+        height: 1px;
+        background-color: $white;
+      }
+      &:hover {
+        &:after {
+          width: 20px;
+        }
+      }
+    }
+  }
+
+  &_bordo {
+    border-color: $primary;
+    color: $primary;
+    &:after {
+      position: absolute;
+      content: '';
+      width: 30px;
+      left: 92%;
+      top: 50%;
+      height: 1px;
+      background-color: $primary;
+      transition: width 0.2s linear;
+
+    }
+    &:hover {
+      &:after {
+        width: 35px;
+      }
+    }
+  }
+
+  &_white {
+    border-color: $white;
+    color: $white;
+    &:after {
+      position: absolute;
+      content: '';
+      width: 30px;
+      left: 92%;
+      top: 50%;
+      height: 1px;
+      background-color: $white;
+      transition: width 0.2s linear;
+    }
+    &:hover {
+      &:after {
+        width: 35px;
+      }
+    }
+  }
+}

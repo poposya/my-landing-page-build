@@ -1,0 +1,97 @@
+  @import "../../mixins";
+
+.main_about {
+  display: flex;
+  margin-top: 120px;
+  //max-height: 386px;
+  flex-direction: column;
+  @include phones {
+    margin-top: 80px;
+  }
+  &__title-mobile {
+    display: none;
+    @include tablets {
+      display: flex;
+      flex-direction: column;
+      margin-left: 40px;
+    }
+    @include phones {
+      margin-left: 20px;
+    }
+  }
+  &__block {
+    display: flex;
+    @include phones {
+      flex-direction: column;
+    }
+    @include tablets {
+      flex-direction: row;
+    }
+  }
+  &_image {
+    flex-basis: 50%;
+    @include phones {
+      order: 2;
+      margin-top: 20px;
+    }
+    @include tablets {
+      order: 0;
+      margin-top: 0;
+      height: 50%;
+    }
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+  &_info {
+    flex-basis: calc(50% - 115px);
+    display: flex;
+    flex-direction: column;
+    margin-left: 115px;
+    @include phones {
+      margin-left: 20px;
+      margin-right: 20px;
+    }
+    @include tablets {
+      margin-left: 40px;
+      margin-right: 40px;
+    }
+
+    &__btn-wrapper {
+      width: 170px;
+      @include phones {
+        width: calc(100% - 15px);
+      }
+      @include tablets {
+        width: 170px;
+      }
+      button {
+        width: 100%;
+      }
+    }
+    &__title {
+      display: flex;
+      @include tablets {
+        display: none;
+      }
+      flex-direction: column;
+    }
+    &_title {
+      @include h2();
+      margin-top: 10px;
+      margin-bottom: 30px;
+      @include phones {
+        @include h2_mobile();
+        .block {
+          display: block;
+        }
+      }
+    }
+    &_content {
+      @include content_text();
+      margin-bottom: 40px;
+      max-width: 370px;
+    }
+  }
+}

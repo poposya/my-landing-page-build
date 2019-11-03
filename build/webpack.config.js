@@ -114,7 +114,7 @@ module.exports = {
             chunkFilename: "[id].css"
         }),
         new HtmlWebpackPlugin({
-            title: 'Landing page build',
+            title: 'Dolce Vita',
             template: './src/index.handlebars',
             minify: !isDevelopment && {
                 html5: true,

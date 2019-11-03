@@ -1,0 +1,285 @@
+@import "../../mixins";
+@import "../../variables";
+
+.callback {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  &__copyright {
+    display: flex;
+    @include phones {
+      flex-direction: column;
+    }
+    &__column {
+      padding-bottom: 40px;
+
+      flex-basis: 50%;
+      background-color: $white;
+      &:first-child {
+        padding-left: 55px;
+        @include tablets {
+          padding-left: 40px;
+        }
+        @include phones {
+          padding-left: 0;
+        }
+      }
+      p {
+        @include content_text();
+        opacity: .7;
+      }
+      @include tablets {
+        padding-bottom: 30px;
+      }
+      @include phones {
+        padding: 30px 0 20px;
+        text-align: center;
+        background-color: $primary;
+        p {
+          color: $white;
+          opacity: .7;
+        }
+      }
+
+      &-bordo {
+        background-color: $primary;
+        display: flex;
+        justify-content: flex-end;
+        padding-right: 55px;
+        img.mobile {
+          display: none;
+        }
+        @include tablets {
+          padding-right: 40px;
+        }
+        @include phones {
+          padding-top: 0;
+          justify-content: center;
+          padding-right: 0;
+          img {
+            display: none;
+          }
+          img.mobile {
+            display: flex;
+          }
+        }
+      }
+    }
+    .scroll-up {
+      //height: 70px;
+      align-items: flex-start;
+      background: linear-gradient(to left, $primary 50%, $white 50%);
+      @include phones {
+        order: -1;
+        background: $black;
+        &_btn {
+          width: 100%;
+        }
+      }
+    }
+  }
+  &__main {
+    display: flex;
+    align-items: stretch;
+  }
+  &__column {
+    background-color: $white;
+    padding: 110px 155px 60px;
+    flex-basis: 50%;
+    display: flex;
+    flex-direction: column;
+    @include tablets {
+      padding: 60px 40px;
+    }
+    @include phones {
+      display: none;
+    }
+
+    &__title {
+      margin-bottom: 40px;
+      height: 66px;
+      @include phones {
+        display: none;
+      }
+
+      span.over_h {
+        @include over_h();
+        margin-bottom: 10px;
+      }
+      h2 {
+        @include h2();
+      }
+    }
+    &__address {
+      h3 {
+        @include h3();
+        color: $black;
+        @include phones {
+          @include h3_mobile();
+        }
+      }
+      .content-info {
+        margin-top: 10px;
+        @include content_text();
+        text-decoration: none;
+        display: block;
+        opacity: .7;
+        &.content-info-opacity-1 {
+          opacity: 1;
+        }
+      }
+      a.content-info {
+        color: $primary;
+        &:hover {
+          color: $black
+        }
+      }
+    }
+    &__contacts {
+      margin-top: 40px;
+      h3 {
+        @include h3();
+        color: $black;
+        margin-bottom: 10px;
+      }
+
+      &__list {
+        display: flex;
+        flex-direction: column;
+        .content-info {
+          @include content_text();
+          text-decoration: none;
+          opacity: .7;
+          margin-top: 5px;
+          &:first-child {
+            margin-top: 0;
+          }
+          &:hover {
+            opacity: 1;
+          }
+        }
+      }
+    }
+    &__email {
+      margin-top: 40px;
+      h3 {
+        @include h3();
+        color: $black;
+        margin-bottom: 10px;
+      }
+      a {
+        @include content_text();
+        text-decoration: none;
+      }
+    }
+    &__callback {
+      background-color: $primary;
+      padding-left: 115px;
+      @include tablets {
+        padding-left: 30px;
+      }
+      @include phones {
+        display: flex;
+        flex-basis: 100%;
+        padding: 30px 20px;
+        height: 451px;
+        justify-content: center;
+      }
+      .btn_wrapper {
+        display: flex;
+        align-items: center;
+        @include phones {
+          width: calc(100% - 15px);
+          button {
+            width: 100%;
+          }
+        }
+      }
+      &__thanks {
+        text-align: center;
+        margin-bottom: 40px;
+      }
+      p.content-info {
+        text-align: center;
+        @include content_text();
+        opacity: .7;
+        color: $white;
+      }
+      h3 {
+        @include h3();
+        margin-bottom: 40px;
+        @include phones {
+          margin-bottom: 30px;
+        }
+      }
+      &__form {
+        display: flex;
+        flex-direction: column;
+        color: $white;
+        &_success {
+          padding-top: 205px;
+          display: none;
+          opacity: 0;
+          @include phones {
+            padding-top: 0;
+          }
+        }
+        label {
+          display: flex;
+          flex-direction: column;
+          //margin-bottom: 30px;
+          .error {
+            color: $white;
+            opacity: .8;
+            font-size: 10px;
+            visibility: hidden;
+          }
+          input {
+            background-color: transparent;
+            border: 0;
+            border-bottom: 1px solid rgba(255,255,255, .5);
+            outline: none;
+            @include forms();
+            padding-bottom: 5px;
+            transition: border-bottom-color 0.3s ease-in-out;
+            &:focus {
+              border-bottom-color: $white;
+            }
+            &::placeholder {
+              opacity: .4;
+              color: $white;
+            }
+          }
+        }
+
+        input[type="number"] {
+          -moz-appearance:textfield;
+          &::-webkit-outer-spin-button,
+          &::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+          }
+        }
+        textarea.comment-area {
+          height: 70px;
+          resize: none;
+          border: 0;
+          border-bottom: 1px solid rgba(255,255,255, .5);
+          background-color: transparent;
+          margin-bottom: 40px;
+          outline: none;
+          color: $white;
+          transition: border-bottom-color 0.3s ease-in-out;
+          &:focus {
+            border-bottom-color: $white;
+          }
+        }
+        .comment {
+          opacity: .4;
+          @include forms();
+          margin-bottom: 10px;
+        }
+      }
+    }
+  }
+}

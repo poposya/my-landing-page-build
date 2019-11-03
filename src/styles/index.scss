@@ -1,0 +1,92 @@
+@import "reset";
+@import "variables";
+@import "mixins";
+@import "buttons";
+
+// Sections
+@import "shared/index";
+
+@import "main/main";
+
+.over_h {
+  @include over_h();
+  &_white {
+    color: $white;
+  }
+  &_conditional {
+    height: 17px;
+  }
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-animation: autofill 0s forwards;
+  animation: autofill 0s forwards;
+}
+
+@keyframes autofill {
+  100% {
+    background: transparent;
+    color: inherit;
+  }
+}
+
+@-webkit-keyframes autofill {
+  100% {
+    background: transparent;
+    color: inherit;
+  }
+}
+
+.scroll-down, .scroll-up {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  &_btn {
+    width: 40px;
+    height: 40px;
+    background-color: $black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.1s ease-in-out;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+
+
+.accent {
+  color: $primary;
+}
+
+body, html {
+  font-family: $content-font;
+  font-size: $content-font-size;
+  line-height: $content-line-height;
+  color: $black;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.fadeInAnimate {
+  opacity: 0;
+  transform: translate3d(0px, 200, 0px);
+  backface-visibility: hidden;
+  transition: all 700ms cubic-bezier(0.645, 0.045, 0.355, 1);
+
+  &.in-view {
+    opacity: 1;
+    transform: translate3d(0px, 0px, 0px);
+  }
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+

@@ -1,0 +1,408 @@
+@import "../../mixins";
+
+.main_header {
+  width: 100%;
+  position: relative;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  @include phones {
+    border-bottom: 1px solid $primary;
+    background-color: $beige;
+  }
+  @include tablets {
+    background-color: $beige;
+  }
+  &:before {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    background-color: $beige;
+  }
+  .top-line {
+    display: flex;
+    align-items: center;
+    min-height: 91px;
+    max-height: 91px;
+    height: 91px;
+    width: 100%;
+    @include phones {
+      display: none;
+    }
+    @include tablets {
+      display: none;
+    }
+    &.mobile {
+      display: none;
+      align-items: center;
+      padding-left: 40px;
+      padding-right: 40px;
+      @include phones {
+        padding-left: 20px;
+        padding-right: 20px;
+        display: flex;
+      }
+      @include tablets {
+        display: flex;
+      }
+      .menu-switcher, .lang-switcher {
+        width: calc(50% - 35px);
+      }
+      .lang-switcher {
+        &_item {
+          &:first-child {
+            margin-right: 15px;
+          }
+          @include link();
+          color: $black;
+          opacity: .5;
+          &.active {
+            opacity: 1;
+          }
+          &:hover {
+            cursor: pointer;
+            color: $primary;
+            opacity: 1;
+          }
+        }
+      }
+      .menu-switcher {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        height: 100%;
+        &_icon {
+          &_open {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 25px;
+            height: 12px;
+            align-items: flex-end;
+            &:hover {
+              cursor: pointer;
+            }
+            .menu-switcher_icon_line {
+              height: 2px;
+              background-color: $primary;
+              transition: all 0.3s ease-in-out;
+
+              &.top {
+                width: 100%;
+              }
+
+              &.med {
+                width: 80%;
+              }
+
+              &.bottom {
+                width: 60%;
+              }
+
+              &.full-width {
+                width: 100%;
+              }
+            }
+          }
+
+          &_close {
+            display: flex;
+            &:hover {
+              cursor: pointer;
+            }
+          }
+        }
+      }
+
+    }
+    .left-column {
+      width: calc(50% - 35px);
+      height: 100%;
+      display: flex;
+      align-items: center;
+      .menu-switcher {
+        background-color: $primary;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 125px;
+        height: 100%;
+        &_icon {
+          &_open {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 25px;
+            height: 12px;
+            &:hover {
+              cursor: pointer;
+            }
+            .menu-switcher_icon_line {
+              height: 2px;
+              background-color: $white;
+              transition: all 0.3s ease-in-out;
+
+              &.top {
+                width: 100%;
+              }
+
+              &.med {
+                width: 80%;
+              }
+
+              &.bottom {
+                width: 60%;
+              }
+
+              &.full-width {
+                width: 100%;
+              }
+            }
+          }
+
+          &_close {
+            display: flex;
+            &:hover {
+              cursor: pointer;
+            }
+          }
+        }
+      }
+      .menu {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        margin-left: 30px;
+        &_item {
+          @include link();
+          color: $black;
+          &:not(:last-child) {
+            margin-right: 30px;
+          }
+          &:hover {
+            color: $primary;
+          }
+        }
+      }
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      height: 100%;
+    }
+    .right-column {
+      width: calc(50% - 35px);
+      height: 100%;
+      display: flex;
+      align-items: center;
+      .lang-switcher {
+        margin-left: auto;
+        margin-right: 30px;
+        &_item {
+          &:first-child {
+            margin-right: 15px;
+          }
+          @include link();
+          color: $black;
+          opacity: .5;
+          &.active {
+            opacity: 1;
+          }
+          &:hover {
+            cursor: pointer;
+            color: $primary;
+            opacity: 1;
+          }
+        }
+      }
+      .feedback {
+        width: 225px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        background-color: $primary;
+        text-decoration: none;
+        span {
+          @include link();
+          color: $white;
+          &:hover {
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  }
+  .banner {
+    margin-left: 155px;
+    margin-top: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    @include tablets {
+      flex-direction: column;
+      justify-content: normal;
+      margin-left: 0;
+      height: calc(100% - 178px);
+    }
+    @include phones {
+      margin-left: 0;
+      flex-direction: column;
+      height: calc(100% - 178px);
+      justify-content: normal;
+    }
+    &_caption {
+      display: flex;
+      flex-direction: column;
+      @include phones {
+        align-items: center;
+        height: 50%;
+      }
+      @include tablets {
+        align-items: center;
+        height: 50%;
+      }
+      &_header {
+        @include h1();
+        margin-top: 10px;
+        @include phones {
+          @include h1_mobile();
+          text-align: center;
+        }
+        @include tablets {
+          text-align: center;
+        }
+      }
+    }
+    &_image {
+      flex-basis: 65%;
+      display: flex;
+      align-items: flex-end;
+      img {
+        width: 100%;
+        height: 100%;
+        @include tablets {
+          transform: scaleX(1.1);
+        }
+        @include phones {
+          height: auto;
+        }
+      }
+      @include tablets {
+        flex-basis: auto;
+        height: auto;
+        width: 100%;
+        overflow: hidden;
+        display: flex;
+      }
+    }
+  }
+  .callback-btn {
+    background-color: $primary;
+    color: $white;
+    border: none;
+    display: flex;
+    align-items: center;
+    &:hover {
+      cursor: pointer;
+    }
+    &__wrapper {
+      display: none;
+      justify-content: center;
+      margin-top: 30px;
+      margin-bottom: 30px;
+      @include phones {
+        margin-bottom: 0;
+        display: flex;
+      }
+      @include tablets {
+        display: flex;
+      }
+
+    }
+  }
+  .scroll-down {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 163px;
+    margin-top: auto;
+    @include tablets {
+      display: none;
+    }
+    @include phones {
+      display: none;
+    }
+    &_btn {
+      width: 40px;
+      height: 40px;
+      background-color: $black;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      &:hover {
+        cursor: pointer;
+        background-color: $primary;
+      }
+    }
+  }
+  .navigation-popup {
+    display: none;
+    flex-direction: column;
+    opacity: 0;
+    align-items: center;
+    background-color: $beige;
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    &__callback-btn {
+      &__wrapper {
+        display: none;
+        justify-content: center;
+        @include phones {
+          margin-top: auto;
+          display: flex;
+        }
+        @include tablets {
+          display: flex;
+        }
+      }
+    }
+    &_list {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: calc(100% - 164px);
+      a {
+        display: flex;
+        @include menu();
+        opacity: 0;
+        border-bottom: 2px solid transparent;
+        text-decoration: none;
+        padding-bottom: 5px;
+        position: relative;
+        transition: all 0.2s ease-in-out;
+        color: $black;
+        &:not(:first-child) {
+          margin-top: 23px;
+        }
+        &:hover {
+          border-bottom-color: $primary;
+          color: $primary;
+        }
+        @include phones {
+          @include menu_mobile();
+        }
+      }
+    }
+  }
+}
+
